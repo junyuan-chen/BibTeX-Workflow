@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Run this script to generate a BibTeX sub-database from the main catalogue using bib2bib based on filter conditions
+# To make this file executable, run "chmod +x bib/gen-bib" from project repo
+
+# $BIB_BASE is an environmental variable added to ~/.bash_profile
+CATALOGUE="$BIB_BASE/catalogue.bib"
+
+# Verify CATALOGUE exists and has a length greater than zero 
+if  [ ! -s "$CATALOGUE" ]; then
+    echo "ERROR: CATALOGUE is not found!"
+    exit 1
+fi
+
+# "$(dirname "$0")" ensures ref.bib and gen-bib are in the same directory
+# --no-comment avoids printing out CATALOGUE path in output file
+bib2bib --no-comment -ob "$(dirname "$0")"/ref.bib -c 'groups : "DEMO"' "$CATALOGUE"

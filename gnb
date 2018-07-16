@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This script run the "gen-bib" file located either in the working directory or in the "bib" subdirectory
+# Put this script in /usr/local/bin so that it can be called from anywhere
+# Alternatively, set a symbolic link by running
+# ln -sf <SOURCE_PATH> <TARGET_PATH>
+
+# Test the existence of "gen-bib" and then run the script
+if  [ -s bib/gen-bib ]; then
+    ./bib/gen-bib
+    exit 0
+elif [ -s gen-bib ]; then
+    ./gen-bib
+    exit 0
+else
+    echo "ERROR: gen-bib is not found!" >&2
+    exit 1
+fi

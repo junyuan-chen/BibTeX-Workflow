@@ -1,6 +1,6 @@
 # An Efficient Workflow for Managing BibTeX Entries  
 
-In this article, I discuss the issues I encountered when handling with BibTeX entries and the solution I came up with.
+In this article, I discuss the issues I encountered when handling BibTeX entries and the solution I came up with.
 I assume that readers have some experience with LaTeX, BibTeX, JabRef, Git and Bash.
 
 ### Background
